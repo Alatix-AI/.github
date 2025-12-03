@@ -1,11 +1,69 @@
-# .github
-Alatix AI is a lightweight, modular, and asynchronous AI agent framework designed for building autonomous agents. It provides advanced planning, memory management, tool integration, and multi-LLM support, making it ideal for creating efficient AI systems. Built with simplicity and scalability in mind, Alatix AI enables developers to prototype and deploy agents quickly without heavy dependencies.
-Key Features
+<!-- .github/profile/README.md -->
+<h1 align="center">
+    <img src="alatixai.jpg" alt="AlatixAI Logo" width="120"/>
+    <br>
+    Alatix Agent Framework
+</h1>
 
-Advanced Planner: Tree-of-Thought style multi-step planning with candidate generation, scoring, refinement, and dead-end detection. Supports function-calling and tool chaining.
-Memory System: Hybrid episodic and semantic memory with automatic summarization, importance decay, pruning, and clustering. Optional persistent storage via FAISS for long-term data retention.
-Multi-LLM Support: Seamless integration with providers like OpenAI, Anthropic, Hugging Face, Ollama, and Replicate. Includes caching, retries, stats tracking, and ensemble/failover modes.
-Tool Registry: Easy registration of synchronous/asynchronous tools with automatic JSON schema generation for LLM compatibility.
-Asynchronous Execution: Full async support for streaming responses, tool runs, and memory operations, ensuring high performance in real-time applications.
-Persistent Mode: Enable persistent memory for semantic data using FAISS, with automatic snapshots to disk for durability across sessions.
-Configurable Parameters: Customizable max steps, temperature, retrieval limits, and more for fine-tuned agent behavior.
+<p align="center"><em>"Empower AI Agents to plan, remember, and act autonomously."</em></p>
+
+---
+
+## 🚀 Overview
+
+Alatix is an open-source **agent framework** designed for developers and researchers who want to build autonomous AI agents. It combines:
+
+- **LLM Integration** – Support for OpenAI, HuggingFace, and other LLM backends.
+- **Advanced Multi-step Planner** – planning with candidate generation, scoring, and self-refinement.
+- **Memory System** – Semantic and episodic memory for context-aware decision making.
+- **Tool Execution** – Easily integrate synchronous and asynchronous tools with unified JSON input/output.
+
+---
+
+## 🛠 Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **LLM Adapter** | Connects any LLM backend with adjustable temperature, max tokens, and function-calling support. |
+| **Planner** | Multi-step, tree-of-thought planning with candidate scoring, pruning, and dead-end detection. |
+| **Memory** | Semantic memory for knowledge storage and episodic memory for task history. |
+| **Tools** | Define Python functions as agent-callable tools with automatic JSON schema generation. |
+| **Streaming Execution** | Step-by-step output streaming and tool execution events. |
+| **Persistence** | Store agent knowledge and history for long-term autonomous behavior. |
+
+---
+
+## ⚡ Usage Example
+
+```python
+from alatix.agent import Agent
+from alatix.tools import tool
+
+# Define a simple tool
+@tool
+def save_file(name: str, content: str):
+    with open(name, "w", encoding="utf-8") as f:
+        f.write(content)
+    return {"status": "saved", "filename": name}
+
+# Initialize the agent
+Codeagent = Agent(
+    model="huggingface:Qwen/Qwen3-Coder-30B-A3B-Instruct:nebius",
+    api_key="hf_xxx",
+    max_tokens=4048,
+    tools=[save_file],
+    max_steps=5,
+    temperature=0.6,
+    persistent=True
+)
+
+# Run agent asynchronously
+import asyncio
+
+async def main():
+    query = "Search the internet for latest AI agent advancements and save the code."
+    result = await Codeagent.run(query)
+    print("Final Result:\n", result)
+
+asyncio.run(main())
+
