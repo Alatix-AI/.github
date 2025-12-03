@@ -19,9 +19,10 @@ Alatix AI is a lightweight, open-source framework for building intelligent, auto
 - **Tool Execution** – A registry for defining synchronous or asynchronous tools with automatic JSON schema generation from Python functions. Safe execution wrappers normalise outputs and handle errors.
 - **Agent Core** - Orchestrates everything with streaming execution, configurable max steps, temperature control, and context retrieval for RAG-like enhancements.
 
+Alatix stands out for its "smol" philosophy—minimal dependencies, async-aware design, and focus on performance—making it ideal for rapid prototyping, research, and production-grade autonomous agents.
+
 ---
 
-Alatix stands out for its "smol" philosophy—minimal dependencies, async-aware design, and focus on performance—making it ideal for rapid prototyping, research, and production-grade autonomous agents.
 
 ## 🛠 Key Features
 
