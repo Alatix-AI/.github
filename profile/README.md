@@ -39,4 +39,4 @@ Alatix stands out for its "small but efficient" philosophy—minimal dependencie
 
 ## Learn more
 
-- [`Alatix`](https://github.com/Alatix-AI/alatix-agent-framework) - an open-source **agent framework** designed for developers and researchers who want to build autonomous AI agents.
+- [`Alatix`](https://github.com/Alatix-AI/atlatix-agent-framework) - an open-source **agent framework** designed for developers and researchers who want to build autonomous AI agents.
