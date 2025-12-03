@@ -1,6 +1,6 @@
 <!-- .github/profile/README.md -->
 <h1 align="center">
-    <img src="alatixai.jpg" alt="AlatixAI Logo" width="120"/>
+    <img src="alaxitai.jpg" alt="AlatixAI Logo" width="120"/>
     <br>
     Alatix Agent Framework
 </h1>
