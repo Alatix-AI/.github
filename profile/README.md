@@ -1,6 +1,6 @@
 <!-- .github/profile/README.md -->
 <h1 align="center">
-    <img src="alaxitai.jpg" alt="AlatixAI Logo" width="120"/>
+    <img src=".github/profile/alaxitai.jpg" alt="AlatixAI Logo" width="120"/>
     <br>
     Alatix Agent Framework
 </h1>
@@ -11,12 +11,12 @@
 
 ## 🚀 Overview
 
-Alatix is an open-source **agent framework** designed for developers and researchers who want to build autonomous AI agents. It combines:
+Alatix AI is a lightweight, open-source framework for building intelligent, autonomous AI agents. Designed for developers and researchers, it enables seamless integration of large language models (LLMs) with advanced planning, memory management, and tool execution capabilities. At its core, Alatix leverages a modular architecture to create agents that can reason, learn from experience, and interact with external tools in real time. It combines:
 
-- **LLM Integration** – Support for OpenAI, HuggingFace, and other LLM backends.
-- **Advanced Multi-step Planner** – planning with candidate generation, scoring, and self-refinement.
-- **Memory System** – Semantic and episodic memory for context-aware decision making.
-- **Tool Execution** – Easily integrate synchronous and asynchronous tools with unified JSON input/output.
+- **LLM Integration** – A unified adapter system supporting multiple providers like OpenAI, Anthropic, HuggingFace, Replicate, and Ollama. It handles generation, streaming, embedding, function-calling, caching, retries, and stats tracking for efficient and reliable LLM interactions.
+- **Advanced Multi-step Planner** – it uses a Tree-of-Thought approach with multi-candidate generation, scoring, ranking, self-refinement, and dead-end detection. This enables robust multi-step planning, tool chaining, and adaptive decision-making.
+- **Memory System** – Combines episodic memory (for recent events with chunk-based summarisation) and semantic memory (for long-term knowledge with importance decay, pruning, and clustering). Optional persistence via FAISS ensures data durability across sessions.
+- **Tool Execution** – A registry for defining synchronous or asynchronous tools with automatic JSON schema generation from Python functions. Safe execution wrappers normalize outputs and handle errors.
 
 ---
 
@@ -32,38 +32,4 @@ Alatix is an open-source **agent framework** designed for developers and researc
 | **Persistence** | Store agent knowledge and history for long-term autonomous behavior. |
 
 ---
-
-## ⚡ Usage Example
-
-```python
-from alatix.agent import Agent
-from alatix.tools import tool
-
-# Define a simple tool
-@tool
-def save_file(name: str, content: str):
-    with open(name, "w", encoding="utf-8") as f:
-        f.write(content)
-    return {"status": "saved", "filename": name}
-
-# Initialize the agent
-Codeagent = Agent(
-    model="huggingface:Qwen/Qwen3-Coder-30B-A3B-Instruct:nebius",
-    api_key="hf_xxx",
-    max_tokens=4048,
-    tools=[save_file],
-    max_steps=5,
-    temperature=0.6,
-    persistent=True
-)
-
-# Run agent asynchronously
-import asyncio
-
-async def main():
-    query = "Search the internet for latest AI agent advancements and save the code."
-    result = await Codeagent.run(query)
-    print("Final Result:\n", result)
-
-asyncio.run(main())
 
