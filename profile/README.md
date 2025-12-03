@@ -33,3 +33,6 @@ Alatix AI is a lightweight, open-source framework for building intelligent, auto
 
 ---
 
+## Learn more
+
+- [`Alatix`](https://github.com/Alatix-AI/Alatix Agent Framework) 
