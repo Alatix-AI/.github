@@ -1,1 +1,2 @@
 # .github
+Alatix AI is a lightweight, modular, and asynchronous AI agent framework designed for building autonomous agents. It provides advanced planning, memory management, tool integration, and multi-LLM support, making it ideal for creating efficient AI systems. Built with simplicity and scalability in mind, Alatix AI enables developers to prototype and deploy agents quickly without heavy dependencies.
