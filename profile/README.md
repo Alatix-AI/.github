@@ -16,9 +16,12 @@ Alatix AI is a lightweight, open-source framework for building intelligent, auto
 - **LLM Integration** – A unified adapter system supporting multiple providers like OpenAI, Anthropic, HuggingFace, Replicate, and Ollama. It handles generation, streaming, embedding, function-calling, caching, retries, and stats tracking for efficient and reliable LLM interactions.
 - **Advanced Multi-step Planner** – it uses a Tree-of-Thought approach with multi-candidate generation, scoring, ranking, self-refinement, and dead-end detection. This enables robust multi-step planning, tool chaining, and adaptive decision-making.
 - **Memory System** – Combines episodic memory (for recent events with chunk-based summarisation) and semantic memory (for long-term knowledge with importance decay, pruning, and clustering). Optional persistence via FAISS ensures data durability across sessions.
-- **Tool Execution** – A registry for defining synchronous or asynchronous tools with automatic JSON schema generation from Python functions. Safe execution wrappers normalize outputs and handle errors.
+- **Tool Execution** – A registry for defining synchronous or asynchronous tools with automatic JSON schema generation from Python functions. Safe execution wrappers normalise outputs and handle errors.
+- **Agent Core** - Orchestrates everything with streaming execution, configurable max steps, temperature control, and context retrieval for RAG-like enhancements.
 
 ---
+
+Alatix stands out for its "smol" philosophy—minimal dependencies, async-aware design, and focus on performance—making it ideal for rapid prototyping, research, and production-grade autonomous agents.
 
 ## 🛠 Key Features
 
