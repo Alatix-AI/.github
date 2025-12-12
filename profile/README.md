@@ -5,7 +5,7 @@
     Alatix Agent Framework
 </h1>
 
-<p align="center"><em>"Empower AI Agents to plan, remember, and act autonomously."</em></p>
+<p align="center"><em>"Self-evolving, multi-modal, programmatically extensible agent."</em></p>
 
 ---
 
